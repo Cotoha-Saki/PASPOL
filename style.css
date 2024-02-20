@@ -1,0 +1,272 @@
+@charset "utf-8";
+
+.topbar {
+    background-color: #CDDAD9;
+}
+
+/* モバイルデフォルトのスタイル */
+@media screen and (max-width: 767px) {
+
+    .logo {
+        display: flex;
+        width: 25%;
+        margin-left: 60px;
+    }
+
+    .TopbarLangJP {
+        display: none;
+    }
+
+    .slideshow {
+        position: relative;
+        overflow: hidden;
+        width: 60%;
+        margin-left: 150px;
+        height: 30px;
+    }
+
+    .slide {
+        position: absolute;
+        font-size: 14px;
+        font-weight: bold;
+        color: rgb(0,68,65);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        animation-name: slideToLeftAndStop;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+    }
+
+    /* アニメーションキーフレーム */
+    @keyframes slideToLeftAndStop {
+
+        0%,
+        20% {
+            /* スライドインとフェードイン */
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        25%,
+        65% {
+            /* 真ん中で停止（5秒間） */
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        70%,
+        80% {
+            /* スライドアウトとフェードアウト */
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+    }
+
+    /* アニメーション時間の設定 */
+    .slide:nth-child(1) {
+        animation-duration: 10s;
+        /* アニメーションの持続時間 */
+    }
+
+    .slide:nth-child(2) {
+        animation-duration: 10s;
+        /* アニメーションの持続時間 */
+        animation-delay: 5s;
+        /* 2番目のスライドの開始を5秒遅らせる */
+    }
+
+    
+
+}
+
+/* タブレット向けのスタイル：画面幅が768pxから1023pxのデバイス */
+@media (min-width: 768px) and (max-width: 1279px) {
+
+    .TopbarLangJP {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        align-items: center; /* アイテムを縦方向の中央に配置 */
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .logo {
+        width: 9%;
+    }
+
+    .slideshow {
+        position: relative;
+        overflow: hidden;
+        width: 40%;
+        height: 30px;
+        margin-left: 300px;
+    }
+
+    .slide {
+        
+        font-size: 14px;
+        font-weight: bold;
+        color: rgb(0,68,65);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        animation-name: slideToLeftAndStop;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+    }
+
+    /* アニメーションキーフレーム */
+    @keyframes slideToLeftAndStop {
+
+        0%,
+        20% {
+            /* スライドインとフェードイン */
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        25%,
+        65% {
+            /* 真ん中で停止（5秒間） */
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        70%,
+        80% {
+            /* スライドアウトとフェードアウト */
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+    }
+
+    /* アニメーション時間の設定 */
+    .slide:nth-child(1) {
+        animation-duration: 10s;
+        /* アニメーションの持続時間 */
+    }
+
+    .slide:nth-child(2) {
+        animation-duration: 10s;
+        /* アニメーションの持続時間 */
+        animation-delay: 5s;
+        /* 2番目のスライドの開始を5秒遅らせる */
+    }
+
+}
+
+/* PC（デスクトップ）向けのスタイル：画面幅が1024px以上のデバイス */
+@media (min-width: 1280px) {
+
+    .topbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .logo {
+        display: flex;
+        width: 9%;
+        margin-left: 60px;
+    }
+
+    .TopbarLangJP {
+        display: flex;
+        align-items: center;
+        margin-right: 300px;
+    }
+
+    .TopbarLangJP img{
+        width: 25px;
+    }
+
+    .lang-text {
+        font-size: 14px;
+        font-weight: bold;
+        color: rgb(0,68,65);
+    }
+
+    .slideshow {
+        position: relative;
+        overflow: hidden;
+        width: 25%;
+        margin-left: 150px;
+        height: 30px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .slide {
+        
+        color: rgb(0,68,65);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        animation-name: slideToLeftAndStop;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+    }
+
+    /* アニメーションキーフレーム */
+    @keyframes slideToLeftAndStop {
+
+        0%,
+        20% {
+            /* スライドインとフェードイン */
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        25%,
+        65% {
+            /* 真ん中で停止（5秒間） */
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        70%,
+        80% {
+            /* スライドアウトとフェードアウト */
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+    }
+
+    /* アニメーション時間の設定 */
+    .slide:nth-child(1) {
+        animation-duration: 10s;
+        /* アニメーションの持続時間 */
+    }
+
+    .slide:nth-child(2) {
+        animation-duration: 10s;
+        /* アニメーションの持続時間 */
+        animation-delay: 5s;
+        /* 2番目のスライドの開始を5秒遅らせる */
+    }
+
+}
